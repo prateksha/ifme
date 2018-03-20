@@ -1,66 +1,81 @@
-// @flow
-import React from 'react';
+//@flow
+import * from 'react';
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 import css from './SideNav.scss';
 
-const routes = [
-    {
-        path: "/dashboard",
-        exact: true,
-    },
-    {
-        path: "/moments",
-        exact: true,
-        routes: [
-            {
-            path: '/categories'
-            },
-            {
-                path: '/moods'
-            }
-        ]
-    },
-    {
-        path: "/strategies",
-        exact: true,
-    },
-    {
-        path: "/medication",
-        exact: true,
-    },
-    {
-        path: "/groups",
-        exact: true,
-    },
-    {
-        path: "/allies",
-        exact: true,
-    }
-];
-const navColor = `${css.bg}`;
-const navTwoColor = `${css.secondarybg}`;
+type Props{
+    navColor: CSSConditionRule,
+    navTwoColor: CSSConditionRule,
+    routes: Route;
+    children: data:{exact: boolean }) => React.ReactNode,
+    path: string
+};
+
+type State = {
+    showMenu: boolean,
+};
 
 
-export default class SideNavBar extends React.Component{
-    constructor(props){
-            super(props);
-            this.state = { showMenu: false};
-        
-        this.handleClick = this.handleClick.bind(this);
-        this.handleCloseClick = this.handleCloseClick.bind(this);
+export default class SideNavBar extends React.Component<Props,State>{
+    navColor = `${css.bg}`;
+    navTwoColor = `${css.secondarybg}`;
+    routes = [
+        {
+            path: "/dashboard",
+            exact: true,
+        },
+        {
+            path: "/moments",
+            exact: true,
+            routes: [
+                {
+                path: '/categories'
+                },
+                {
+                    path: '/moods'
+                }
+            ]
+        },
+        {
+            path: "/strategies",
+            exact: true,
+        },
+        {
+            path: "/medication",
+            exact: true,
+        },
+        {
+            path: "/groups",
+            exact: true,
+        },
+        {
+            path: "/allies",
+            exact: true,
         }
-        
-        handleClick(){
+    ];
+    state = {
+        showMenu: false;
+    };
+        handleClick = (): void => {
             this.setState({showMenu: true});
         }
 
-        handleCloseClick(){
+        handleCloseClick = (): void => {
             this.setState({showMenu: false});
         }
+
 
     render(){
         return(
     <Router>
+        {routes.map((route, index) =>(
+            <Route
+            key={index}
+            path={route.path}
+            exact={route.exact}
+            component={route.SideNavBar}
+            />
+        ))}
         <div className = {navColor}>
         <li activeclassName="active" onClick={this.handleCloseClick}><NavLink activeStyle={{backgroundColor: 'white', color: '#6d0839b3'}} to ="/dashboard">Dashboard</NavLink></li>
                     <li activeclassName="active" onClick={this.handleClick}><NavLink activeStyle={{backgroundColor: 'white', color: '#6d0839b3'}} to ="/moments">Moments</NavLink></li>
@@ -72,14 +87,6 @@ export default class SideNavBar extends React.Component{
                     <li activeclassName="active" onClick={this.handleCloseClick}><NavLink activeStyle={{backgroundColor: 'white', color: '#6d0839b3'}} to="/medications">Medications</NavLink></li>
                     <li activeclassName="active" onClick={this.handleCloseClick}><NavLink activeStyle={{backgroundColor: 'white', color: '#6d0839b3'}} to="/groups">Groups</NavLink></li>
                     <li activeclassName="active" onClick={this.handleCloseClick}><NavLink activeStyle={{backgroundColor: 'white', color: '#6d0839b3'}} to="/allies">Allies</NavLink></li>
-                    {routes.map((route, index) =>(
-                        <Route
-                        key={index}
-                        path={route.path}
-                        exact={route.exact}
-                        component={route.SideNavBar}
-                        />
-                    ))}
                     </div>
                     </Router>
         );
