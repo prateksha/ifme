@@ -3,10 +3,10 @@ es:
  app_description: "es una comunidad para compartir experiencias de salud mental"
  email: "join.ifme@gmail.com"
  ellipsis: " [...]"
- created: "<strong>Creado:</strong> %{created_at}"
+ created: "Creado %{created_at}"
  draft: "Borrador"
- edited: "<strong>Creado:</strong> %{created_at} <em>(editado)</em>"
- edited_updated_at: "<strong>Creado:</strong> %{created_at} <em>(edited %{updated_at})</em>"
+ edited: "Creado %{created_at} (editado)"
+ edited_updated_at: "Creado %{created_at} (edited %{updated_at})"
  salutation: "Hola %{name},"
  click_here: "da click aquí"
  less: " [Menos]"
@@ -20,7 +20,7 @@ es:
    ptbr: Português
    sv: Svenska
    various: Varios
-   vn: Tiếng Việt
+   vi: Tiếng Việt
    it: Italiano
    nb: Norsk
 
@@ -351,6 +351,7 @@ es:
 
  omniauth:
   google: "Google"
+  facebook: "Facebook"
   access_denied: "Acceso Denegado"
 
  pages:
@@ -648,6 +649,8 @@ es:
     meeting_notify_text: "Actualizaciones de reuniones"
     google_auth1: "Si ya no deseas verificar tu identidad a través de Google, por favor ingresa un nuevo correo electrónico y contraseña."
     google_auth2: "Debido a que tu identidad ha sido confirmada a través de Google, no necesitas ingresar tu contraseña.<br>Si deseas modificar esto, por favor ingresa un nuevo correo electrónico y contraseña."
+    facebook_auth1: "Si ya no deseas verificar tu identidad a través de Facebook, por favor ingresa un nuevo correo electrónico y contraseña."
+    facebook_auth2: "Debido a que tu identidad ha sido confirmada a través de Facebook, no necesitas ingresar tu contraseña.<br>Si deseas modificar esto, por favor ingresa un nuevo correo electrónico y contraseña."
     placeholders:
       repeat_password: "Repetir contraseña"
     edit:
@@ -672,6 +675,8 @@ es:
   shared:
     sign_in_google: "Registrarse con Google"
     sign_up_google: "Ingresar con Google"
+    sign_in_facebook: "Registrarse con Facebook"
+    sign_up_facebook: "Ingresar con Facebook"
     confirmation: "¿No recibiste instrucciones de confirmación?"
     unlock: "¿No recibiste instrucciones para desbloquear?"
   unlock:

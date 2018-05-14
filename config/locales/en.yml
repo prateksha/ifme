@@ -3,10 +3,10 @@ en:
  app_description: 'is a community for mental health experiences'
  email: 'join.ifme@gmail.com'
  ellipsis: " [...]"
- created: '<strong>Created:</strong> %{created_at}'
+ created: 'Created %{created_at}'
  draft: "Draft"
- edited: '<strong>Created:</strong> %{created_at} <em>(edited)</em>'
- edited_updated_at: '<strong>Created:</strong> %{created_at} <em>(edited %{updated_at})</em>'
+ edited: 'Created %{created_at} (edited)'
+ edited_updated_at: 'Created %{created_at} (edited %{updated_at})'
  salutation: "Hi %{name},"
  click_here: "click here"
  less: " [Less]"
@@ -20,7 +20,7 @@ en:
    ptbr: Português
    sv: Svenska
    various: Various
-   vn: Tiếng Việt
+   vi: Tiếng Việt
    it: Italiano
    nb: Norsk
 
@@ -349,6 +349,7 @@ en:
 
  omniauth:
   google: 'Google'
+  facebook: 'Facebook'
   access_denied: 'Access Denied'
 
  pages:
@@ -646,6 +647,8 @@ en:
     meeting_notify_text: "Meeting updates"
     google_auth1: "If you no longer want to be authenticated with Google, please enter a new email and password."
     google_auth2: "Since you are authenticated with Google, you do not need to enter your password.<br>If you want to change this, please enter a new email and password."
+    facebook_auth1: "If you no longer want to be authenticated with Facebook, please enter a new email and password."
+    facebook_auth2: "Since you are authenticated with Google, you do not need to enter your password.<br>If you want to change this, please enter a new email and password."
     placeholders:
       repeat_password: "Repeat Password"
     edit:
@@ -670,6 +673,8 @@ en:
   shared:
     sign_in_google: 'Sign in with Google'
     sign_up_google: 'Sign up with Google'
+    sign_in_facebook: 'Sign in with Facebook'
+    sign_up_facebook: 'Sign up with Facebook'
     confirmation: "Didn't receive confirmation instructions?"
     unlock: "Didn't receive unlock instructions?"
   unlock:
