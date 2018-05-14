@@ -5,10 +5,12 @@
     "react-router": "^4.2.0"
   },
   "scripts": {
-    "postinstall": "cd client && yarn install"
+    "postinstall": "cd client && yarn install",
+    "start": "foreman start -f Procfile.dev",
+    "test": "cd client && yarn && cd .. && rspec"
   },
   "engines": {
-    "node": "6.x"
+    "node": "8.11.1"
   },
   "cacheDirectories": [
     "node_modules",

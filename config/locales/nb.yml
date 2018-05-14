@@ -3,10 +3,10 @@ nb:
  app_description: 'er et samfunn for mental helse opplevelser'
  email: 'join.ifme@gmail.com'
  ellipsis: " [...]"
- created: '<strong>Opprettet:</strong> %{created_at}'
+ created: 'Opprettet %{created_at}'
  draft: "Utkast"
- edited: '<strong>Opprettet:</strong> %{created_at} <em>(redigert)</em>'
- edited_updated_at: '<strong>Opprettet:</strong> %{created_at} <em>(redigert %{updated_at})</em>'
+ edited: 'Opprettet %{created_at} (redigert)'
+ edited_updated_at: 'Opprettet %{created_at} (redigert %{updated_at})'
  salutation: "Hei %{name},"
  click_here: "klikk her"
  less: " [Mindre]"
@@ -20,7 +20,7 @@ nb:
    ptbr: Português
    sv: Svenska
    various: Various
-   vn: Tiếng Việt
+   vi: Tiếng Việt
    it: Italiano
    nb: Norsk
 
@@ -349,6 +349,7 @@ nb:
 
  omniauth:
   google: 'Google'
+  facebook: 'Facebook'
   access_denied: 'Adgang avvist'
 
  pages:
@@ -467,7 +468,7 @@ nb:
       social_justice: sosial rettferdighet
       tech_industry: IT-bransjen
       meditation: meditasjon
-      social_anxiety: sosial angst 
+      social_anxiety: sosial angst
       trigger_warnings: avtrekkelsesadvarsler
       netflix: netflix
       homeless: uteligger
@@ -646,6 +647,8 @@ nb:
     meeting_notify_text: "Møteoppdateringer"
     google_auth1: "Hvis du ikke lenger ønsker å bli autorisert med Google, vennligst fyll inn en ny e-post og passord."
     google_auth2: "Siden du ikke er autorisert med Google trenger du ikke å taste inn passordet ditt.<br>Hvis du ønsker å forandre dette, vennligst fyll inn e-post og passord på nytt."
+    facebook_auth1: "Hvis du ikke lenger ønsker å bli autorisert med Facebook, vennligst fyll inn en ny e-post og passord."
+    facebook_auth2: "Siden du ikke er autorisert med Facebook trenger du ikke å taste inn passordet ditt.<br>Hvis du ønsker å forandre dette, vennligst fyll inn e-post og passord på nytt."
     placeholders:
       repeat_password: "Gjenta passord"
     edit:
@@ -670,6 +673,8 @@ nb:
   shared:
     sign_in_google: 'Logg inn med Google'
     sign_up_google: 'Registrer deg med Google'
+    sign_in_facebook: 'Logg inn med Facebook'
+    sign_up_facebook: 'Registrer deg med Facebook'
     confirmation: "Mottok ikke bekreftelsesinstruksjoner?"
     unlock: "Mottok ikke opplåsningsinstruksjoner?"
   unlock:

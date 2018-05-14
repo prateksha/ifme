@@ -36,6 +36,7 @@ gem 'google-api-client', '~> 0.13.1'
 gem 'i18n-js', '>= 3.0.0.rc11'
 gem 'kaminari', '0.17.0'
 gem 'omniauth', '~> 1.6.1'
+gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2', '~> 0.5.2'
 gem 'pusher', '1.1.0'
 gem 'rails-i18n', '~> 5.0.0'
@@ -48,8 +49,8 @@ gem 'font-awesome-sass'
 
 gem 'groupdate', '3.2'
 
-gem 'react_on_rails', '8.0.6'
-gem 'webpacker_lite'
+gem 'react_on_rails', '9.0.3'
+gem 'webpacker'
 
 group :development, :test do
   gem 'bundler-audit'
