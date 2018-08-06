@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :report do
     reporter_id "MyString"
-    reprtee_id "MyString"
+    reportee_id "MyString"
     comments "MyText"
   end
   factory :group_member do
