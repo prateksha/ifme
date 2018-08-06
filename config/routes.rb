@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'errors/not_found'
   get 'errors/internal_server_error'
 
@@ -36,6 +37,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :reports
+  
   resources :secret_shares, only: [:create, :show, :destroy]
 
   resources :strategies do

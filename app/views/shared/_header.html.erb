@@ -54,6 +54,15 @@
       <% end %>
       <div class="clear"></div>
     </ul>
+    
+    <ul class="top-nav primary-nav">
+      <% if user_signed_in? %>
+      <%  if current_user.admin? %>
+        <%= link_to('AdminDashboard', rails_admin.dashboard_path) %>
+      <% end %>
+      <% end %>
+      <div class="clear"></div>
+    </ul>
 
     <% if user_signed_in? %>
       <ul id="expand_moment" class="top-nav display_none">
