@@ -8,8 +8,7 @@
 
 <% if @outgoing_ally_requests.any? %>
   <strong><%= t('allies.index.outgoing') %></strong>
-  <br>
-  <br>
+  <div class="spacer"></div>
   <div class="allies_list">
   <% @outgoing_ally_requests.each do |ally| %>
     <div class="ally center">
@@ -27,8 +26,7 @@
     <div class="spacer"></div>
   <% end %>
   <strong><%= t('allies.index.incoming') %></strong>
-  <br>
-  <br>
+  <div class="spacer"></div>
   <div class="allies_list">
   <% @incoming_ally_requests.each do |ally| %>
     <div class="ally center">
@@ -44,8 +42,7 @@
 <% if @accepted_allies.present? %>
   <div class="spacer"></div>
   <strong><%= t('allies.index.title') %></strong>
-  <br>
-  <br>
+  <div class="spacer"></div>
 <% end %>
 
 <% if @accepted_allies.present? %>
@@ -56,6 +53,7 @@
         <h1 class="ally_name"><%= link_to ally.name, profile_index_path(uid: get_uid(ally.id)) %></h1>
         <div class="location"><%= ally.location %></div>
         <%= link_to t('common.actions.remove'), remove_allies_path(ally_id: ally.id), method: :post, data: { confirm: t('common.actions.confirm') } %>
+        <%= link_to 'Report', new_report_path(ally_id: ally.id), method: :get %>
       </div>
     <% end %>
   </div>

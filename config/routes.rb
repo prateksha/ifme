@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  devise_for :admins, skip: :registrations
   get 'errors/not_found'
   get 'errors/internal_server_error'
 
@@ -12,8 +14,14 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :medications
+  namespace :admin do
+    resources :reports
+  end
+  
+  get 'admin' => 'admin/reports#index'
 
+  resources :medications
+  resources :reports
   resources :moods do
     collection do
       post 'premade'
@@ -48,9 +56,10 @@ Rails.application.routes.draw do
   end
 
   resources :groups do
-    collection do
-      get 'join'
-      get 'leave'
+    scope module: :groups do
+      resource :membership, only: [:create, :destroy] do
+        delete ':member_id', to: 'memberships#kick', as: 'kick'
+      end
     end
   end
 

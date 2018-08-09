@@ -1,4 +1,12 @@
 FactoryBot.define do
+  factory :admin do
+    
+  end
+  factory :report do
+    reporter_id "MyString"
+    reportee_id "MyString"
+    comments "MyText"
+  end
   factory :group_member do
     association :user, factory: :user1
     group
@@ -22,7 +30,7 @@ FactoryBot.define do
     time 'Test Time'
     maxmembers 1
     date Date.tomorrow
-    sequence(:groupid)
+    sequence(:group_id)
   end
 
   factory :bad_group, class: Group do
@@ -35,13 +43,13 @@ FactoryBot.define do
 
     factory :group_with_member do
       transient do
-        userid 1
+        user_id 1
         leader false
       end
 
       after(:create) do |group, evaluator|
-        create :group_member, userid: evaluator.userid,
-                              groupid: group.id,
+        create :group_member, user_id: evaluator.user_id,
+                              group_id: group.id,
                               leader: evaluator.leader
       end
     end
@@ -51,11 +59,11 @@ FactoryBot.define do
     status :accepted
   end
 
-  factory :allyships_pending_from_userid1, class: Allyship do
+  factory :allyships_pending_from_user_id1, class: Allyship do
     status :pending_from_user
   end
 
-  factory :allyships_pending_from_userid2, class: Allyship do
+  factory :allyships_pending_from_user_id2, class: Allyship do
     status :pending_from_ally
   end
 
