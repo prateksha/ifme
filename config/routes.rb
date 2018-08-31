@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
 
-
-  devise_for :admins, skip: :registrations
-
   get 'errors/not_found'
   get 'errors/internal_server_error'
 
@@ -15,12 +12,6 @@ Rails.application.routes.draw do
       post 'remove'
     end
   end
-
-  namespace :admin do
-    resources :reports
-  end
-  
-  get 'admin' => 'admin/reports#index'
 
   resources :medications
   resources :reports
