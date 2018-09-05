@@ -11,8 +11,9 @@
 #  updated_at          :datetime         not null
 
 class Report < ApplicationRecord
-  belongs_to :reporter, class_name => "user"
-  belongs_to :reportee, class_name => "user"
+  belongs_to :user
+  belongs_to :reporter, class_name: 'User'
+  belongs_to :reportee, class_name: 'User'
   has_one :comment
   validates :reportee_id, presence: true
   validates :reporter_id, presence: true
