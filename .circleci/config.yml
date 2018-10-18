@@ -58,6 +58,7 @@ jobs:
           paths:
           - ~/.cache/yarn
           - ./node_modules
+          - ./vendor/bundle
       - run: |-
           mkdir -p config && echo 'test:
             min_messages: error
@@ -78,6 +79,7 @@ jobs:
       - run:
           name: Run React Jest Tests
           command: |
+            set -e
             cd client && RAILS_ENV=test bundle exec rake react_on_rails:locale && yarn lint:setup && yarn lint:build && yarn build:test && yarn test --coverage
             cd ~/ifmeorg/ifme/tmp && ./cc-test-reporter format-coverage -t lcov -o codeclimate.frontend.json ../client/coverage/lcov.info
       - persist_to_workspace:
@@ -87,6 +89,7 @@ jobs:
       - run:
           name: Run Rails Rspec Tests
           command: |
+            set -e
             bundle exec rspec --format progress --format RspecJunitFormatter -o $CIRCLE_TEST_REPORTS/rspec.xml
             cd ~/ifmeorg/ifme/tmp && ./cc-test-reporter format-coverage -t simplecov -o codeclimate.backend.json ../coverage/.resultset.json
       - persist_to_workspace:
@@ -96,6 +99,7 @@ jobs:
       - run:
           name: Run Rails Jasmine Tests
           command: |
+            set -e
             RAILS_ENV=test bundle exec rake jasmine:ci
       - run: bundle exec bundle-audit check --update
       - store_test_results:

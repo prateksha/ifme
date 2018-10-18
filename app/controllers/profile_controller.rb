@@ -27,6 +27,6 @@ class ProfileController < ApplicationController
   def remove_ban
     ban_user_id = params[:ban_user_id]
     User.where(id: ban_user_id).update(banned: false)
-    redirect_to_path admin_dashboard_path
+    redirect_to admin_dashboard_path
   end
 end
